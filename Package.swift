@@ -1,14 +1,14 @@
 // swift-tools-version:4.2
 import PackageDescription
 
-let package = Package(name: "Swift-Sh-Script-Eject")
+let package = Package(name: "Mint-Hello-World")
 
 package.products = [
-    .executable(name: "Swift-Sh-Script-Eject", targets: ["Swift-Sh-Script-Eject"])
+    .executable(name: "Mint-Hello-World", targets: ["Mint-Hello-World"])
 ]
 package.dependencies = [
     .package(url: "https://github.com/mxcl/PromiseKit.git", .upToNextMajor(from: "6.5.0"))
 ]
 package.targets = [
-    .target(name: "Swift-Sh-Script-Eject", dependencies: [.product(name: "PromiseKit", package: "PromiseKit")], path: "Sources")
+    .target(name: "Mint-Hello-World", dependencies: [.product(name: "PromiseKit", package: "PromiseKit")], path: "Sources")
 ]
