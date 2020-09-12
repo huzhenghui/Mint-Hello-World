@@ -3,12 +3,17 @@
 import Foundation
 import PromiseKit // @mxcl ~> 6.5
 
+let formatter = DateFormatter.init()
+formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+
 firstly {
-    after(.seconds(2))
+    print("Firstly      : ", formatter.string(from: Date()))
+    return after(.seconds(1))
 }.then {
-    after(.milliseconds(500))
+    print("Then (1s)    : ", formatter.string(from: Date()))
+    return after(.milliseconds(500))
 }.done {
-    print("notice: two and a half seconds elaapsed")
+    print("Done (500ms) : ", formatter.string(from: Date()))
     exit(0)
 }
 
