@@ -6,6 +6,8 @@ import PromiseKit // @mxcl ~> 6.5
 let formatter = DateFormatter.init()
 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
 
+print(CommandLine.arguments)
+
 firstly {
     print("Firstly      : ", formatter.string(from: Date()))
     return after(.seconds(1))
